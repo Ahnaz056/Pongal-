@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Pongal MALATHY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 60px 20px;
+    text-align: center;
+    background: #ffe7a0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  h1, h2, p { animation: fadeIn 1.8s ease forwards; }
+
+  .heart {
+    position: fixed;
+    bottom: -30px;
+    animation: floatUp 4s linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes floatUp {
+    0%{ transform:translateY(0); opacity:1; }
+    100%{ transform:translateY(-110vh); opacity:0; }
+  }
+
+  @keyframes fadeIn {
+    from{ opacity:0; transform:translateY(10px);}
+    to{ opacity:1; transform:translateY(0);}
+  }
+
+  .sugarcane-left, .sugarcane-right {
+    position: fixed;
+    top: 10px;
+    width: 70px;
+  }
+  .sugarcane-left{ left:5px;}
+  .sugarcane-right{ right:5px;}
+
+</style>
+</head>
+<body>
+
+<svg class="sugarcane-left" viewBox="0 0 80 200">
+  <rect x="30" y="0" width="20" height="200" fill="#7a5d29"/>
+  <polyline points="40,50 10,70 40,90" stroke="#3d8b37" stroke-width="6" fill="none"/>
+  <polyline points="40,110 10,130 40,150" stroke="#3d8b37" stroke-width="6" fill="none"/>
+</svg>
+
+<svg class="sugarcane-right" viewBox="0 0 80 200">
+  <rect x="30" y="0" width="20" height="200" fill="#7a5d29"/>
+  <polyline points="40,50 70,70 40,90" stroke="#3d8b37" stroke-width="6" fill="none"/>
+  <polyline points="40,110 70,130 40,150" stroke="#3d8b37" stroke-width="6" fill="none"/>
+</svg>
+
+<h1>Happy Pongal 🌾✨</h1>
+<h2>My Dear Friend <span style="color:#d45a00;">MALATHY</span></h2>
+
+<p>
+Wishing you prosperity,<br>
+joy, warmth, and blessings<br>
+on this beautiful Pongal day!
+</p>
+
+<strong style="display:block;margin-top:20px;font-size:20px;">
+Happy Pongal to You 🤎
+</strong>
+
+<script>
+const colors = ["#ff4b4b", "#ff69d4", "#4bbfff", "#ffbf4b"];
+function createHeart(){
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.color = colors[Math.floor(Math.random()*colors.length)];
+  heart.innerText = "❤";
+  heart.style.fontSize = (15 + Math.random()*20) + "px";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),4000);
+}
+setInterval(createHeart,400);
+</script>
+
+</body>
+</html>
